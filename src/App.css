@@ -1,10 +1,14 @@
 body {
-  background: #f1f1f1;
+  background: rgb(36, 9, 66);
   padding: 50px;
 }
 
+.header {
+  text-align: center;
+  margin: auto;
+}
 div#crypto-container {
-  background: white;
+  background: rgb(152, 136, 196);
   width: 70%;
   margin: 0 auto 4px auto;
   padding: 1em;

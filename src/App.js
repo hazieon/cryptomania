@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css";
+import styles from "./App.css";
 import Coin from "./components/coin";
 const NumberFormat = require("react-number-format");
 const key = process.env.KEY;
@@ -20,26 +20,27 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <h1>Welcome</h1>
-      {Object.keys(cryptos).map((key) => {
-        console.log({ key });
-        return (
-          // render coin component
-          <div>
-            <Coin
-              name={key}
-              image={cryptos[key].GBP.IMAGEURL}
-              price={cryptos[key].GBP.PRICE}
-            />
-            {/* <div id="crypto-container">
-            <span className="left">{key}</span>
-            <span className="right">{cryptos[key].GBP.PRICE}</span> */}
-            {/* <img src={cryptos[key].GBP.IMAGEURL} alt="coin logo" /> */}
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <h1 className={styles.header}>Welcome</h1>
+      <div className={styles.App}>
+        {Object.keys(cryptos).map((key) => {
+          console.log({ key });
+          return (
+            // render coin component
+            <div>
+              <Coin
+                name={key}
+                image={cryptos[key].GBP.IMAGEURL}
+                price={cryptos[key].GBP.PRICE}
+                hour={cryptos[key].GBP.CHANGEPCTHOUR}
+                day={cryptos[key].GBP.CHANGEPCT24HOUR}
+                priceChange={cryptos[key].GBP.CHANGE24HOUR}
+              />
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }
 

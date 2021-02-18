@@ -1,13 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./index.module.css";
-function Coin({ name, image, price }) {
+function Coin({ name, image, price, hour, day, priceChange }) {
+  const [clicked, setClicked] = useState(false);
   console.log(name, image, price);
+
+  function toggleClicked() {
+    setClicked(!clicked);
+  }
   return (
-    <div id="crypto-container">
+    <div id="crypto-container" onClick={toggleClicked}>
       <div className="crypto-row">
+        <img
+          src={`https://www.cryptocompare.com${image}`}
+          alt="coin logo"
+          className={styles.coinImg}
+        />
         <span className={styles.spanleft}>{name}</span>
         <span className={styles.spanright}>{price}</span>
-        <img src={image} alt="coin logo" />
+
+        <section className={clicked ? styles.section : styles.sectionNONE}>
+          <span className={styles.dataContainer}>
+            <p className={styles.label}>1hr:</p>
+            <h3 className={styles.data}>{hour}%</h3>
+          </span>
+          <span className={styles.dataContainer}>
+            <p className={styles.label}>24hr:</p>
+            <h3 className={styles.data}>{day}%</h3>
+          </span>
+          <span className={styles.dataContainer}>
+            <p className={styles.label}>24hr price:</p>
+            <h3 className={styles.data}>{priceChange}</h3>
+          </span>
+
+          {/* <h3>price usd</h3>
+          <h3>price eur</h3>
+          <h3>price btc</h3> */}
+        </section>
       </div>
     </div>
   );

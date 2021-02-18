@@ -5,6 +5,7 @@ div#crypto-container {
   padding: 1em;
   box-shadow: 1px 1px 0 lightgrey;
   border-radius: 30px;
+  text-align: center;
 }
 
 .spanleft {
@@ -13,4 +14,48 @@ div#crypto-container {
 
 .spanright {
   float: right;
+  font-weight: bolder;
+}
+
+.section {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  justify-content: center;
+   */
+  /* grid-template-columns: 35vw 350px; */
+  /* display: flex;
+
+  
+   */
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 0.7em;
+}
+
+.sectionNONE {
+  display: none;
+}
+
+.coinImg {
+  width: 5%;
+  margin-right: 0.7em;
+  border-radius: 20px;
+}
+
+.dataContainer {
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  padding: 0.2rem;
+  text-align: center;
+  margin: auto;
+}
+
+.label {
+  font-size: 15px;
+}
+
+.data {
+  font-size: 17px;
 }
