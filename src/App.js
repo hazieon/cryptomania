@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./App.css";
 import Coin from "./components/coin";
-const NumberFormat = require("react-number-format");
 const key = process.env.KEY;
 function App() {
   const [cryptos, setCryptos] = useState([]);
@@ -21,8 +20,8 @@ function App() {
 
   return (
     <>
-      <h1 className={styles.header}>Welcome</h1>
       <div className={styles.App}>
+        <h1 className="heading">Cryptomania</h1>
         {Object.keys(cryptos).map((key) => {
           console.log({ key });
           return (

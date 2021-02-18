@@ -3,9 +3,11 @@ body {
   padding: 50px;
 }
 
-.header {
+.heading {
   text-align: center;
   margin: auto;
+  padding: 30px;
+  color: white;
 }
 div#crypto-container {
   background: rgb(152, 136, 196);
