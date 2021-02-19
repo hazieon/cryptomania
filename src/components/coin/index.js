@@ -21,15 +21,23 @@ function Coin({ name, image, price, hour, day, priceChange }) {
         <section className={clicked ? styles.section : styles.sectionNONE}>
           <span className={styles.dataContainer}>
             <p className={styles.label}>1hr:</p>
-            <h3 className={styles.data}>{hour}%</h3>
+            <h3 className={hour > 0 ? styles.dataPlus : styles.dataMinus}>
+              {hour}%
+            </h3>
           </span>
           <span className={styles.dataContainer}>
             <p className={styles.label}>24hr:</p>
-            <h3 className={styles.data}>{day}%</h3>
+            <h3 className={day > 0 ? styles.dataPlus : styles.dataMinus}>
+              {day}%
+            </h3>
           </span>
           <span className={styles.dataContainer}>
             <p className={styles.label}>24hr price:</p>
-            <h3 className={styles.data}>{priceChange}</h3>
+            <h3
+              className={priceChange > 0 ? styles.dataPlus : styles.dataMinus}
+            >
+              {priceChange}
+            </h3>
           </span>
 
           {/* <h3>price usd</h3>

@@ -1,12 +1,12 @@
-/* :root {
-  --background-shade: #181420;
-  --secondary-shade: #342e42;
-  --panel-shade: #181420;
+:root {
+  --background-shade: #266ce6;
+  --secondary-shade: #4727d4;
+  --panel-shade: #1f1f20;
   --panel-mid-shade: #331d5f;
-  --deep-shade: #12052c;
-  --mid-shade: #9b77f0;
-  --light-shade: #847cfc;
-} */
+  --deep-shade: #000000;
+  --mid-shade: #864ad4;
+  --light-shade: rgba(0, 212, 255, 1);
+}
 :root,
 #root,
 html,
@@ -16,6 +16,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  font-family: "Rockwell";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
