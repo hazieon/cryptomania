@@ -60,3 +60,55 @@ background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
 background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 */
+
+@media only screen and (max-width: 768px) {
+  .heading {
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    color: white;
+    font-family: "Rockwell";
+    font-size: 8vw;
+    user-select: none;
+    text-shadow: 0px 10px 5px var(--panel-shade);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .heading {
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    color: white;
+    font-family: "Rockwell";
+    font-size: 9vw;
+    user-select: none;
+    text-shadow: 0px 10px 5px var(--panel-shade);
+  }
+}
+
+@media only screen and (min-width: 1180px) {
+  .heading {
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    color: white;
+    font-family: "Rockwell";
+    font-size: 7vw;
+    user-select: none;
+    text-shadow: 0px 10px 5px var(--panel-shade);
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .heading {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    color: white;
+    font-family: "Rockwell";
+    font-size: 7vw;
+    user-select: none;
+    text-shadow: 0px 10px 5px var(--panel-shade);
+  }
+}
