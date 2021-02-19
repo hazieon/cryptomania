@@ -1,25 +1,37 @@
-body {
-  background: rgb(36, 9, 66);
+html {
   padding: 50px;
+  background-color: #2160cc;
+  background-image: linear-gradient(138deg, #4727d4 25%, #266ce6 100%);
 }
+/* deep blue: 
+background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+*/
 
 .heading {
   text-align: center;
   margin: auto;
   padding: 30px;
   color: white;
+  font-family: "Rockwell";
+  font-size: 3.3rem;
+  user-select: none;
+  text-shadow: 0px 10px 5px #29234d;
 }
-div#crypto-container {
-  background: rgb(152, 136, 196);
+
+#crypto-container {
+  background: #1f1f20;
   width: 70%;
   margin: 0 auto 4px auto;
   padding: 1em;
-  box-shadow: 1px 1px 0 lightgrey;
-  border-radius: 30px;
+  border-radius: 17px;
+  color: white;
 }
 
 span.left {
   font-weight: bold;
+  user-select: none;
 }
 
 span.right {
@@ -35,11 +47,7 @@ span.right {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
 
 .App-header {
   background-color: #282c34;
@@ -55,12 +63,20 @@ span.right {
 .App-link {
   color: #61dafb;
 }
+*/
 
-@keyframes App-logo-spin {
+@media (prefers-reduced-motion: no-preference) {
+  #crypto-container {
+    animation: shadow-rainbow infinite 4s linear alternate;
+  }
+}
+
+@keyframes shadow-rainbow {
   from {
-    transform: rotate(0deg);
+    box-shadow: 0px 0px 2px 1px rgba(0, 212, 255, 1);
   }
+
   to {
-    transform: rotate(360deg);
+    box-shadow: 0px 0px 2px 1px #864ad4;
   }
-} */
+}
