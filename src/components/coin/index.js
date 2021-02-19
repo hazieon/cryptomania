@@ -4,6 +4,9 @@ function Coin({ name, image, price, hour, day, priceChange }) {
   const [clicked, setClicked] = useState(false);
   console.log(name, image, price);
 
+  //ensure priceChange value is a number for + or - evaluation, need to remove £ sign for that
+  var priceChangeNum = Number(priceChange.replace(/[^0-9\.-]+/g, ""));
+  console.log({ priceChangeNum });
   function toggleClicked() {
     setClicked(!clicked);
   }
@@ -32,9 +35,11 @@ function Coin({ name, image, price, hour, day, priceChange }) {
             </h3>
           </span>
           <span className={styles.dataContainer}>
-            <p className={styles.label}>24hr price:</p>
+            <p className={styles.label}>24hr change:</p>
             <h3
-              className={priceChange > 0 ? styles.dataPlus : styles.dataMinus}
+              className={
+                priceChangeNum > 0 ? styles.dataPlus : styles.dataMinus
+              }
             >
               {priceChange}
             </h3>

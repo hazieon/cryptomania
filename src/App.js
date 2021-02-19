@@ -18,9 +18,13 @@ function App() {
       });
   }, []);
 
+  //add a nav bar with a link to somewhere
+  //refresh page button
+  //add more coins, and add a search
   return (
     <>
       <div className={styles.App}>
+        <nav></nav>
         <h1 className="heading">Cryptomania</h1>
         {Object.keys(cryptos).map((key) => {
           console.log({ key });
