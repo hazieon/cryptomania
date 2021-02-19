@@ -4,6 +4,8 @@ The MVP (minimum viable product) of this app is a minimalistic cryptocurrency tr
 Using React.js, CSS and axios to carry out API calls.
 Users can view the current price (per coin), daily change in price, daily % change in price and hourly % change in price.
 
+View the app here: https://cryptomaniaa.netlify.app
+
 ## How to use this app
 1. 'git clone' to copy the repo to your machine
 2. (get an API key and add it to your local .env file)
