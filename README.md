@@ -3,7 +3,7 @@
 The MVP (minimum viable product) of this app is a minimalistic cryptocurrency tracker,
 Using React.js, CSS and axios to carry out API calls.
 Users can view the current price (per coin), daily change in price, daily % change in price and hourly % change in price.
-
+☆NEW☆ Market cap and coin supply data now viewable!
 View the app here: https://cryptomaniaa.netlify.app
 
 ## How to use this app
