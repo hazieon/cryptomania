@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import styles from "./index.module.css";
-function Coin({ name, image, price, hour, day, priceChange }) {
+function Coin({
+  name,
+  symbol,
+  image,
+  price,
+  hour,
+  day,
+  priceChange,
+  marketCap,
+  supply,
+}) {
   const [clicked, setClicked] = useState(false);
   console.log(name, image, price);
 
@@ -18,7 +28,9 @@ function Coin({ name, image, price, hour, day, priceChange }) {
           alt="coin logo"
           className={styles.coinImg}
         />
+
         <span className={styles.spanleft}>{name}</span>
+
         <span className={styles.spanright}>{price}</span>
 
         <section className={clicked ? styles.section : styles.sectionNONE}>
@@ -48,6 +60,16 @@ function Coin({ name, image, price, hour, day, priceChange }) {
           {/* <h3>price usd</h3>
           <h3>price eur</h3>
           <h3>price btc</h3> */}
+        </section>
+        <section className={clicked ? styles.section : styles.sectionNONE}>
+          <span className={styles.dataContainer}>
+            <p className={styles.label}>Market cap:</p>
+            <h3 className={styles.dataPlus}>{marketCap}</h3>
+          </span>
+          <span className={styles.dataContainer}>
+            <p className={styles.label}>Supply:</p>
+            <h3 className={styles.dataPlus}>{supply}</h3>
+          </span>
         </section>
       </div>
     </div>
