@@ -33,11 +33,14 @@ function App() {
             <div>
               <Coin
                 name={key}
+                symbol={cryptos[key].GBP.FROMSYMBOL}
                 image={cryptos[key].GBP.IMAGEURL}
                 price={cryptos[key].GBP.PRICE}
                 hour={cryptos[key].GBP.CHANGEPCTHOUR}
                 day={cryptos[key].GBP.CHANGEPCT24HOUR}
                 priceChange={cryptos[key].GBP.CHANGE24HOUR}
+                marketCap={cryptos[key].GBP.MKTCAP}
+                supply={cryptos[key].GBP.SUPPLY}
               />
             </div>
           );
