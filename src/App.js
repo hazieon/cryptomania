@@ -3,13 +3,14 @@ import axios from "axios";
 import styles from "./App.css";
 import Coin from "./components/coin";
 const key = process.env.KEY;
+//perhaps not very secure
 function App() {
   const [cryptos, setCryptos] = useState([]);
 
   useEffect(() => {
     axios
       .get(
-        `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,ADA,GRT,LTC,DOT,LINK,BNB,XLM&tsyms=BTC,USD,EUR,GBP&api_key=${key}`
+        `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,ADA,GRT,XLM,LTC,DOT,LINK,BNB,DOGE&tsyms=BTC,USD,EUR,GBP&api_key=${key}`
       )
       .then((res) => {
         const cryptos = res.data;
