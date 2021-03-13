@@ -12,11 +12,11 @@ function Coin({
   supply,
 }) {
   const [clicked, setClicked] = useState(false);
-  console.log(name, image, price);
+  // console.log(name, image, price);
 
   //ensure priceChange value is a number for + or - evaluation, need to remove £ sign for that
   var priceChangeNum = Number(priceChange.replace(/[^0-9\.-]+/g, ""));
-  console.log({ priceChangeNum });
+  // console.log({ priceChangeNum });
   function toggleClicked() {
     setClicked(!clicked);
   }

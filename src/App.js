@@ -14,7 +14,7 @@ function App() {
       )
       .then((res) => {
         const cryptos = res.data;
-        console.log(cryptos, "cryptos");
+        // console.log(cryptos, "cryptos");
         setCryptos(cryptos.DISPLAY);
       });
   }, []);
@@ -28,7 +28,6 @@ function App() {
         <nav></nav>
         <h1 className="heading">Cryptomania</h1>
         {Object.keys(cryptos).map((key) => {
-          console.log({ key });
           return (
             // render coin component
             <div>
