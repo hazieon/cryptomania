@@ -3,21 +3,20 @@ import axios from "axios";
 import styles from "./App.css";
 import Coin from "./components/coin";
 const key = process.env.KEY;
-//perhaps not very secure
+
 function App() {
   const [cryptos, setCryptos] = useState([]);
 
   useEffect(() => {
     axios
       .get(
-        `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,ADA,GRT,XLM,LTC,DOT,LINK,BNB,DOGE&tsyms=BTC,USD,EUR,GBP&api_key=${key}`
+        `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,ADA,GRT,XLM,LTC,DOT,LINK,PAXG,BNB,DOGE&tsyms=USDT,BTC,USD,EUR,GBP&api_key=${key}`
       )
       .then((res) => {
         const cryptos = res.data;
-        // console.log(cryptos, "cryptos");
         setCryptos(cryptos.DISPLAY);
       });
-  }, []);
+     }, []);
 
   //add a nav bar with a link to somewhere
   //refresh page button
@@ -33,14 +32,14 @@ function App() {
             <div>
               <Coin
                 name={key}
-                symbol={cryptos[key].GBP.FROMSYMBOL}
-                image={cryptos[key].GBP.IMAGEURL}
-                price={cryptos[key].GBP.PRICE}
-                hour={cryptos[key].GBP.CHANGEPCTHOUR}
-                day={cryptos[key].GBP.CHANGEPCT24HOUR}
-                priceChange={cryptos[key].GBP.CHANGE24HOUR}
-                marketCap={cryptos[key].GBP.MKTCAP}
-                supply={cryptos[key].GBP.SUPPLY}
+                symbol={cryptos[key].USDT.FROMSYMBOL}
+                image={cryptos[key].USDT.IMAGEURL}
+                price={cryptos[key].USDT.PRICE}
+                hour={cryptos[key].USDT.CHANGEPCTHOUR}
+                day={cryptos[key].USDT.CHANGEPCT24HOUR}
+                priceChange={cryptos[key].USDT.CHANGE24HOUR}
+                marketCap={cryptos[key].USDT.MKTCAP}
+                supply={cryptos[key].USDT.SUPPLY}
               />
             </div>
           );
@@ -52,23 +51,3 @@ function App() {
 
 export default App;
 
-//get prices only
-// "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,IOT&tsyms=GBP"
-
-// {Object.keys(
-//   cryptos.length > 1
-//     ? cryptos.map((key) => {
-//         return (
-//           <div id="crypto-container">
-//             <span className="left">{key}</span>
-//             <span className="right">{cryptos.gbp}</span>
-//           </div>
-//         );
-//       })
-//     : ""
-// )}
-
-//  <div id="crypto-container">
-//             <span className="left">{key}</span>
-//             <span className="right">{"hello"}</span>
-//           </div>
