@@ -16,7 +16,7 @@ function App() {
         const cryptos = res.data;
         setCryptos(cryptos.DISPLAY);
       });
-     }, []);
+  }, []);
 
   //add a nav bar with a link to somewhere
   //refresh page button
@@ -32,15 +32,29 @@ function App() {
             <div>
               <Coin
                 name={key}
-                symbol={cryptos[key].USDT.FROMSYMBOL}
-                image={cryptos[key].USDT.IMAGEURL}
-                price={cryptos[key].USDT.PRICE}
-                hour={cryptos[key].USDT.CHANGEPCTHOUR}
-                day={cryptos[key].USDT.CHANGEPCT24HOUR}
-                priceChange={cryptos[key].USDT.CHANGE24HOUR}
-                marketCap={cryptos[key].USDT.MKTCAP}
-                supply={cryptos[key].USDT.SUPPLY}
+                symbol={cryptos[key].GBP.FROMSYMBOL}
+                image={cryptos[key].GBP.IMAGEURL}
+                price={cryptos[key].GBP.PRICE}
+                hour={cryptos[key].GBP.CHANGEPCTHOUR}
+                day={cryptos[key].GBP.CHANGEPCT24HOUR}
+                priceChange={cryptos[key].GBP.CHANGE24HOUR}
+                marketCap={cryptos[key].GBP.MKTCAP}
+                supply={cryptos[key].GBP.SUPPLY}
               />
+
+              <div>
+                <Coin
+                  name={key}
+                  symbol={cryptos[key].USDT.FROMSYMBOL}
+                  image={cryptos[key].USDT.IMAGEURL}
+                  price={cryptos[key].USDT.PRICE}
+                  hour={cryptos[key].USDT.CHANGEPCTHOUR}
+                  day={cryptos[key].USDT.CHANGEPCT24HOUR}
+                  priceChange={cryptos[key].USDT.CHANGE24HOUR}
+                  marketCap={cryptos[key].USDT.MKTCAP}
+                  supply={cryptos[key].USDT.SUPPLY}
+                />
+              </div>
             </div>
           );
         })}
@@ -50,4 +64,3 @@ function App() {
 }
 
 export default App;
-
