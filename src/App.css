@@ -14,7 +14,7 @@ html {
 .heading {
   text-align: center;
   margin: auto;
-  padding: 30px;
+  padding: 20px;
   color: white;
   font-family: "Rockwell";
   font-size: 10vw;
@@ -31,8 +31,29 @@ html {
   color: white;
 }
 
+.currency-select {
+  display: flex;
+  margin: auto;
+  margin-top: 0.8rem;
+  border-radius: 7px;
+  padding: 10px 14px 10px;
+  background-color: #1f1f20;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: "Rockwell";
+  font-weight: bold;
+}
+
+.header {
+  height: 30vh;
+  margin: auto;
+}
 @media (prefers-reduced-motion: no-preference) {
   #crypto-container {
+    animation: shadow-rainbow infinite 4s linear alternate;
+  }
+  .currency-select {
     animation: shadow-rainbow infinite 4s linear alternate;
   }
 }

@@ -6,6 +6,7 @@ const key = process.env.KEY;
 
 function App() {
   const [cryptos, setCryptos] = useState([]);
+  const [currency, setCurrency] = useState("GBP");
 
   useEffect(() => {
     axios
@@ -18,43 +19,46 @@ function App() {
       });
   }, []);
 
+  function currencyChange() {
+    if (currency === "GBP") {
+      setCurrency("USDT");
+    }
+    if (currency === "USDT") {
+      setCurrency("BTC");
+    }
+    if (currency === "BTC") {
+      setCurrency("GBP");
+    }
+  }
+
   //add a nav bar with a link to somewhere
   //refresh page button
   //add more coins, and add a search
   return (
     <>
       <div className={styles.App}>
-        <nav></nav>
-        <h1 className="heading">Cryptomania</h1>
+        <div className="header">
+          <h1 className="heading">Cryptomania</h1>
+
+          <button className="currency-select" onClick={currencyChange}>
+            {currency}
+          </button>
+        </div>
         {Object.keys(cryptos).map((key) => {
           return (
             // render coin component
             <div>
               <Coin
                 name={key}
-                symbol={cryptos[key].GBP.FROMSYMBOL}
-                image={cryptos[key].GBP.IMAGEURL}
-                price={cryptos[key].GBP.PRICE}
-                hour={cryptos[key].GBP.CHANGEPCTHOUR}
-                day={cryptos[key].GBP.CHANGEPCT24HOUR}
-                priceChange={cryptos[key].GBP.CHANGE24HOUR}
-                marketCap={cryptos[key].GBP.MKTCAP}
-                supply={cryptos[key].GBP.SUPPLY}
+                symbol={cryptos[key][currency].FROMSYMBOL}
+                image={cryptos[key][currency].IMAGEURL}
+                price={cryptos[key][currency].PRICE}
+                hour={cryptos[key][currency].CHANGEPCTHOUR}
+                day={cryptos[key][currency].CHANGEPCT24HOUR}
+                priceChange={cryptos[key][currency].CHANGE24HOUR}
+                marketCap={cryptos[key][currency].MKTCAP}
+                supply={cryptos[key][currency].SUPPLY}
               />
-
-              <div>
-                <Coin
-                  name={key}
-                  symbol={cryptos[key].USDT.FROMSYMBOL}
-                  image={cryptos[key].USDT.IMAGEURL}
-                  price={cryptos[key].USDT.PRICE}
-                  hour={cryptos[key].USDT.CHANGEPCTHOUR}
-                  day={cryptos[key].USDT.CHANGEPCT24HOUR}
-                  priceChange={cryptos[key].USDT.CHANGE24HOUR}
-                  marketCap={cryptos[key].USDT.MKTCAP}
-                  supply={cryptos[key].USDT.SUPPLY}
-                />
-              </div>
             </div>
           );
         })}
