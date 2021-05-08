@@ -4,9 +4,11 @@ import styles from "./App.css";
 import Coin from "./components/coin";
 const key = process.env.KEY;
 
+const currencies = ["GBP", "USDT", "EUR", "BTC"];
+
 function App() {
   const [cryptos, setCryptos] = useState([]);
-  const [currency, setCurrency] = useState("GBP");
+  const [currency, setCurrency] = useState(0);
 
   useEffect(() => {
     axios
@@ -20,14 +22,11 @@ function App() {
   }, []);
 
   function currencyChange() {
-    if (currency === "GBP") {
-      setCurrency("USDT");
+    if (currency < currencies.length - 1) {
+      setCurrency(currency + 1);
     }
-    if (currency === "USDT") {
-      setCurrency("BTC");
-    }
-    if (currency === "BTC") {
-      setCurrency("GBP");
+    if (currency === currencies.length - 1) {
+      setCurrency(0);
     }
   }
 
@@ -41,7 +40,10 @@ function App() {
           <h1 className="heading">Cryptomania</h1>
 
           <button className="currency-select" onClick={currencyChange}>
-            {currency}
+            Switch currency to:{" "}
+            {currency !== currencies.length - 1
+              ? currencies[currency + 1]
+              : "GBP"}
           </button>
         </div>
         {Object.keys(cryptos).map((key) => {
@@ -50,14 +52,14 @@ function App() {
             <div>
               <Coin
                 name={key}
-                symbol={cryptos[key][currency].FROMSYMBOL}
-                image={cryptos[key][currency].IMAGEURL}
-                price={cryptos[key][currency].PRICE}
-                hour={cryptos[key][currency].CHANGEPCTHOUR}
-                day={cryptos[key][currency].CHANGEPCT24HOUR}
-                priceChange={cryptos[key][currency].CHANGE24HOUR}
-                marketCap={cryptos[key][currency].MKTCAP}
-                supply={cryptos[key][currency].SUPPLY}
+                symbol={cryptos[key][currencies[currency]].FROMSYMBOL}
+                image={cryptos[key][currencies[currency]].IMAGEURL}
+                price={cryptos[key][currencies[currency]].PRICE}
+                hour={cryptos[key][currencies[currency]].CHANGEPCTHOUR}
+                day={cryptos[key][currencies[currency]].CHANGEPCT24HOUR}
+                priceChange={cryptos[key][currencies[currency]].CHANGE24HOUR}
+                marketCap={cryptos[key][currencies[currency]].MKTCAP}
+                supply={cryptos[key][currencies[currency]].SUPPLY}
               />
             </div>
           );
