@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     axios
       .get(
-        `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,ADA,GRT,XLM,LTC,DOT,LINK,PAXG,BNB,DOGE&tsyms=USDT,BTC,USD,EUR,GBP&api_key=${key}`
+        `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,ADA,GRT,XLM,LTC,DOT,LINK,PAXG,BNB,SHIB,DOGE&tsyms=USDT,BTC,USD,EUR,GBP&api_key=${key}`
       )
       .then((res) => {
         const cryptos = res.data;
